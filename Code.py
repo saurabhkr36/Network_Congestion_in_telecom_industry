@@ -112,6 +112,6 @@ clf1=GradientBoostingClassifier(n_estimators=100, learning_rate=1.0,
 clf2=KNeighborsClassifier(n_neighbors=5,leaf_size=30, p=2, metric='minkowski')
 eclf = VotingClassifier(estimators=[('svc', clf), ('gbc', clf1), ('knc',clf2)],voting='hard')
 scorer=make_scorer(matthews_corrcoef)
-for clf, label in zip([clf, clf1, eclf], ['SVC', 'GradBoost', 'Ensemble']):
+for clf, label in zip([clf, clf1, clf2, eclf], ['SVC', 'GradBoost','KNC', 'Ensemble']):
      scores = cross_val_score(clf, X_real, y, scoring=scorer, cv=3)
      print("MCC: %0.2f (+/- %0.2f) [%s]" % (scores.mean(), scores.std(), label))
