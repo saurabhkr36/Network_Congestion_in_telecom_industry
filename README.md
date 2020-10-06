@@ -59,7 +59,7 @@ Applied logarithmic transformation to the features and treat the zero values to 
 After logarithmic transformation, I've applied scaling using standard scaler of sklearn
 
 ### Model
-I've used Hard Voting ensemble technique on Gradient Boosting & SVC. The VotingClassifier is used from sklearn.ensemble where the hard voting is used for comparing two classification algorithms Gradient boosting and Support Vector Classification.
+I've used Hard Voting ensemble technique on Gradient Boosting, Support Vector Classifier & K-Nearest Classifier. The VotingClassifier is used from sklearn.ensemble where the hard voting is used for comparing two classification algorithms Gradient boosting and Support Vector Classification.
 In hard voting, It uses predicted class labels for majority rule voting. 
 The metric used for evaluation is Matthews correlation coefficient.
 ## End Notes
